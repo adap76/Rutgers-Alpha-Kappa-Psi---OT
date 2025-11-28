@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutgers Alpha Kappa Psi | Omicron Tau Chapter</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Brand Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        akpsi: {
+                            navy: '#003057',   /* Official AKPsi Navy */
+                            gold: '#A39366',   /* Official AKPsi Gold */
+                            dark: '#001A30',   /* Deep Navy */
+                            light: '#F5F7FA'
+                        },
+                        rutgers: {
+                            red: '#cc0033',    /* Official Rutgers Scarlet */
+                            dark: '#a30029'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'scroll': 'scroll 40s linear infinite',
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0, 48, 87, 0.95) 0%, rgba(0, 26, 48, 0.85) 100%);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white">
+
+    <!-- TOP NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-bold text-akpsi-navy tracking-tight leading-none">ALPHA KAPPA PSI</span>
+                        <span class="text-[10px] font-bold text-akpsi-gold uppercase tracking-[0.2em] mt-1">Omicron Tau | Rutgers University</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-gray-600 hover:text-akpsi-navy transition duration-300">About</a>
+                    <!-- Updated Link: Points to Impact Section -->
+                    <a href="#impact" class="text-sm font-medium text-gray-600 hover:text-akpsi-navy transition duration-300">Impact</a>
+                    <!-- Updated Link: Changed from Careers to Brothers -->
+                    <a href="#brothers" class="text-sm font-medium text-gray-600 hover:text-akpsi-navy transition duration-300">Brothers</a>
+                    <a href="#recruitment" class="text-sm font-medium text-gray-600 hover:text-akpsi-navy transition duration-300">Recruitment</a>
+                    
+                    <!-- Contact Button: Uses Rutgers Red for Action -->
+                    <a href="#contact" class="px-6 py-2.5 bg-rutgers-red text-white text-sm font-medium rounded-sm hover:bg-rutgers-dark transition shadow-md">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Icon -->
+                <div class="md:hidden">
+                    <button class="text-gray-600 hover:text-rutgers-red">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <!-- Placeholder for Corporate/Campus Image -->
+            <img src="https://www.rutgers.edu/sites/default/files/lg_RBS-100rock-business-school-aerial.jpg" 
+                 alt="Rutgers Campus" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+            <div class="animate-fade-in opacity-0" style="animation-delay: 0.1s;">
+                <span class="inline-block py-1 px-3 border border-akpsi-gold/50 rounded-full bg-akpsi-navy/50 backdrop-blur text-akpsi-gold text-xs font-bold tracking-widest uppercase mb-6">
+                    Omicron Tau Chapter &middot; Est. 1998
+                </span>
+            </div>
+            
+            <h1 class="animate-fade-in opacity-0 text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight tracking-tight" style="animation-delay: 0.3s;">
+                Shaping People,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 italic">Shaping Business.</span>
+            </h1>
+            
+            <p class="animate-fade-in opacity-0 text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed" style="animation-delay: 0.5s;">
+                The Omicron Tau Chapter is the premier developer of business talent at Rutgers University. We bridge the gap between academic theory and corporate reality.
+            </p>
+            
+            <div class="animate-fade-in opacity-0 flex flex-col sm:flex-row justify-center gap-4" style="animation-delay: 0.7s;">
+                <!-- Apply Button: Rutgers Red -->
+                <a href="#recruitment" class="px-8 py-4 bg-rutgers-red text-white font-semibold rounded-sm shadow-lg hover:bg-rutgers-dark transition duration-300">
+                    Apply for Spring Rush
+                </a>
+                <a href="#about" class="px-8 py-4 border border-white/30 text-white font-medium rounded-sm hover:bg-white hover:text-akpsi-navy transition duration-300">
+                    Our Legacy
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="text-white/50 w-6 h-6"></i>
+        </div>
+    </header>
+
+    <!-- CORPORATE PARTNERS TICKER -->
+    <div class="bg-white border-b border-gray-100 py-10 overflow-hidden">
+        <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">Omicron Tau Alumni Lead At</p>
+        <div class="relative flex overflow-x-hidden group">
+            <div class="animate-scroll flex space-x-16 whitespace-nowrap opacity-60 hover:opacity-100 transition-opacity duration-300">
+                <span class="text-2xl font-bold font-serif text-gray-400">GOLDMAN SACHS</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">DELOITTE</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">J.P. MORGAN</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">GOOGLE</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">AMAZON</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">MCKINSEY & CO</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">JOHNSON & JOHNSON</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">PWC</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">CITI</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">GOLDMAN SACHS</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">DELOITTE</span>
+                <span class="text-2xl font-bold font-serif text-gray-400">J.P. MORGAN</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 bg-akpsi-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-akpsi-gold font-bold tracking-widest uppercase text-sm mb-2">The Omicron Tau Difference</h2>
+                    <h3 class="text-4xl font-serif font-bold text-akpsi-navy mb-6">More Than a Fraternity.<br>A Professional Standard.</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        While other organizations focus solely on social bonds, Alpha Kappa Psi is built on a foundation of holistic professional mastery. We prepare you to lead.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-rutgers-red mt-1 mr-3"></i>
+                            <span class="text-gray-700">Exclusive mentorship programs.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-rutgers-red mt-1 mr-3"></i>
+                            <span class="text-gray-700">Professional development workshops.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-rutgers-red mt-1 mr-3"></i>
+                            <span class="text-gray-700">Lifelong brotherhood.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="rounded-sm shadow-xl" alt="Meeting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRENT BROTHERS SECTION (New!) -->
+    <section id="brothers" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-rutgers-red font-bold tracking-widest uppercase text-sm">Omicron Tau</span>
+                <h2 class="text-4xl font-serif font-bold text-akpsi-navy mt-2">Current Brothers</h2>
+                <div class="w-16 h-1 bg-akpsi-gold mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-gray-500">Separated by Pledge Class</p>
+            </div>
+
+            <!-- Pledge Class Block 1 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-serif font-bold text-akpsi-navy border-b border-gray-200 pb-2 mb-8">
+                    Spring 2024 <span class="text-base font-sans font-normal text-gray-500 ml-2">(Beta Xi Class)</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <!-- Brother Card Example -->
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <!-- Placeholder image - Replace with headshots -->
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Alex Smith</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Finance</p>
+                    </div>
+                    <!-- Duplicate for demo -->
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Sarah Jones</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Marketing</p>
+                    </div>
+                    <!-- Add more brothers here -->
+                </div>
+            </div>
+
+            <!-- Pledge Class Block 2 -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-serif font-bold text-akpsi-navy border-b border-gray-200 pb-2 mb-8">
+                    Fall 2023 <span class="text-base font-sans font-normal text-gray-500 ml-2">(Beta Nu Class)</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Michael Lee</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Accounting</p>
+                    </div>
+                    <!-- Add more brothers here -->
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="text-akpsi-navy font-medium underline hover:text-rutgers-red transition">View Full Roster & Alumni</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT SECTION (Linked from Nav) -->
+    <section id="impact" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-white p-10 shadow-lg rounded-sm border-t-4 border-akpsi-navy">
+                    <div class="flex items-center mb-6">
+                        <i data-lucide="globe" class="w-8 h-8 text-akpsi-navy mr-4"></i>
+                        <h3 class="text-2xl font-serif font-bold text-akpsi-navy">Diversity & Inclusion</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        Business is global, and so are we. We are committed to fostering an inclusive environment where brothers of all backgrounds, majors, and perspectives drive innovation.
+                    </p>
+                    <a href="#" class="text-rutgers-red font-bold text-sm uppercase tracking-wider hover:text-akpsi-navy transition">Our Initiatives &rarr;</a>
+                </div>
+
+                <div class="bg-white p-10 shadow-lg rounded-sm border-t-4 border-rutgers-red">
+                    <div class="flex items-center mb-6">
+                        <i data-lucide="heart" class="w-8 h-8 text-rutgers-red mr-4"></i>
+                        <h3 class="text-2xl font-serif font-bold text-akpsi-navy">Rutgers Dance Marathon</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">
+                        We don't just work; we give back. As a top fundraising team for RUDM, we channel our organizational skills to support the Embrace Kids Foundation.
+                    </p>
+                    <a href="https://dance-marathon.rutgers.edu/" target="_blank" class="text-rutgers-red font-bold text-sm uppercase tracking-wider hover:text-akpsi-navy transition">Support Our Team &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECRUITMENT SECTION (Apply Button Destination) -->
+    <section id="recruitment" class="py-24 bg-akpsi-navy text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-rutgers-red opacity-10 rounded-full filter blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="text-akpsi-gold font-bold tracking-widest uppercase text-sm">Join Omicron Tau</span>
+            <h2 class="text-4xl font-serif font-bold mt-2">Spring 2025 Recruitment</h2>
+            <p class="mt-4 text-gray-300 max-w-2xl mx-auto mb-12">
+                Our process is selective, designed to identify individuals with the drive to shape the future of business.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto mb-16">
+                <div class="bg-white/5 border border-white/10 p-6 rounded">
+                    <div class="text-akpsi-gold font-bold mb-1">Feb 01</div>
+                    <h4 class="font-bold text-lg">Info Session #1</h4>
+                    <p class="text-sm text-gray-400">RSC 101, 8:00 PM</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-6 rounded">
+                    <div class="text-akpsi-gold font-bold mb-1">Feb 03</div>
+                    <h4 class="font-bold text-lg">Info Session #2</h4>
+                    <p class="text-sm text-gray-400">LSC Gathering Lounge, 8:00 PM</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-6 rounded">
+                    <div class="text-akpsi-gold font-bold mb-1">Feb 05</div>
+                    <h4 class="font-bold text-lg">Meet the Chapter</h4>
+                    <p class="text-sm text-gray-400">Business Casual Required</p>
+                </div>
+            </div>
+
+            <!-- APPLY BUTTON: EDIT LINK HERE -->
+            <!-- REPLACE '#' WITH YOUR GOOGLE FORM OR TYPEFORM LINK -->
+            <a href="#" target="_blank" class="inline-block px-12 py-5 bg-rutgers-red text-white font-bold text-lg rounded-sm shadow-xl hover:bg-white hover:text-rutgers-red transition duration-300 transform hover:-translate-y-1">
+                Apply Now
+            </a>
+            <p class="mt-4 text-xs text-gray-400 uppercase tracking-widest">Applications close Feb 10th</p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION (New) -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-akpsi-navy">Contact Us</h2>
+                <p class="text-gray-600 mt-2">Have questions about recruitment or partnerships?</p>
+            </div>
+
+            <!-- CONTACT FORM PLACEHOLDER -->
+            <!-- 
+                 INSTRUCTION: To make this form work, you can use a service like Formspree.io.
+                 1. Go to Formspree.io and create a free form.
+                 2. Replace 'YOUR_FORMSPREE_ENDPOINT' in the action="" attribute below.
+            -->
+            <form action="YOUR_FORMSPREE_ENDPOINT" method="POST" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                        <input type="text" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-2 focus:ring-rutgers-red focus:border-rutgers-red outline-none transition" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-2 focus:ring-rutgers-red focus:border-rutgers-red outline-none transition" placeholder="john@rutgers.edu">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-sm focus:ring-2 focus:ring-rutgers-red focus:border-rutgers-red outline-none transition" placeholder="How can we help?"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-akpsi-navy text-white font-bold rounded-sm hover:bg-rutgers-red transition duration-300">
+                    Send Message
+                </button>
+            </form>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-500">Or email us directly at:</p>
+                <!-- EDIT EMAIL HERE -->
+                <a href="mailto:president.rutgersakpsi@gmail.com" class="text-rutgers-red font-bold text-lg hover:underline">
+                    president.rutgersakpsi@gmail.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-akpsi-dark text-white pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <h4 class="font-serif text-xl font-bold mb-4">Alpha Kappa Psi</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Omicron Tau Chapter<br>
+                        Rutgers University<br>
+                        Piscataway, NJ 08854
+                    </p>
+                </div>
+                
+                <div>
+                    <h5 class="text-akpsi-gold font-bold text-xs uppercase tracking-widest mb-4">Chapter</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#brothers" class="hover:text-white transition">Brotherhood</a></li>
+                        <li><a href="#impact" class="hover:text-white transition">Impact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-akpsi-gold font-bold text-xs uppercase tracking-widest mb-4">Connect</h5>
+                    <div class="flex space-x-4 mb-6">
+                        <!-- EDIT SOCIAL LINKS HERE -->
+                        <a href="https://instagram.com/rutgersakpsi" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-rutgers-red transition">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-rutgers-red transition">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-xs text-gray-500">&copy; 2025 Alpha Kappa Psi - Omicron Tau. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
