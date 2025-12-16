@@ -67,10 +67,6 @@
             will-change: transform; /* Performance optimization for smooth scrolling */
         }
     
-        /* Applying the animation defined in tailwind.config */
-        .ticker-wrapper {
-            animation: scroll-ticker 40s linear infinite;
-        }
     </style>
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
@@ -80,12 +76,12 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
                     <a href="#hero" class="flex items-center space-x-3">
-                            <img 
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Rutgers_logo.svg/800px-Rutgers_logo.svg.png" 
-                                alt="Rutgers Block R Logo" 
-                                class="w-8 h-8 object-contain"
-                            >
-                        <div class="flex flex-col">
+    <img 
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fa/Rutgers_Scarlet_Knights_logo.svg/1024px-Rutgers_Scarlet_Knights_logo.svg.png" 
+        alt="Rutgers Block R Logo" 
+        class="w-8 h-8 object-contain"
+    >
+    <div class="flex flex-col">
                             <span class="font-serif text-2xl font-bold text-akpsi-navy tracking-tight leading-none">ALPHA KAPPA PSI</span>
                             <span class="text-[10px] font-bold text-akpsi-gold uppercase tracking-[0.2em] mt-1">Omicron Tau | Rutgers University</span>
                         </div>
@@ -154,7 +150,7 @@
         <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">Omicron Tau Alumni Lead At</p>
         <div class="relative flex overflow-x-hidden group">
         
-            <div class="ticker-container ticker-wrapper">
+            <div class="ticker-container animate-scroll-ticker">
                 
                 <div class="flex space-x-16 whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity duration-300 flex-shrink-0 w-1/2">
                     <span class="text-2xl font-bold font-serif text-gray-400">J&J</span>
