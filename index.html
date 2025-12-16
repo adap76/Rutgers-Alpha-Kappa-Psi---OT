@@ -32,13 +32,14 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     animation: {
-                        'scroll-ticker': 'scroll-ticker 40s linear infinite',
+                        'scroll-ticker': 'scroll-ticker 40s linear infinite', // ADDED
                         'fade-in': 'fadeIn 1s ease-out forwards',
                     },
                     keyframes: {
+                        // ADDED THE SCROLL-TICKER DEFINITION
                         'scroll-ticker': {
                             '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(-50%)' }, 
                         },
                         fadeIn: {
                             '0%': { opacity: '0', transform: 'translateY(20px)' },
@@ -85,9 +86,11 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
                     <a href="#hero" class="flex items-center space-x-3">
-                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM13.88 16H10.12V8H13.88C15.82 8 17.16 9.24 17.16 12C17.16 14.76 15.82 16 13.88 16ZM14.96 10H13.12V14H14.96C15.4 14 15.8 13.56 15.8 12C15.8 10.44 15.4 10 14.96 10Z" fill="#cc0033"/>
-                        </svg>
+                        <img 
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Rutgers_Scarlet_Knights_logo.svg/248px-Rutgers_Scarlet_Knights_logo.svg.png" 
+                            alt="Rutgers Block R Logo" 
+                            class="w-8 h-8 object-contain"
+                        >
                         <div class="flex flex-col">
                             <span class="font-serif text-2xl font-bold text-akpsi-navy tracking-tight leading-none">ALPHA KAPPA PSI</span>
                             <span class="text-[10px] font-bold text-akpsi-gold uppercase tracking-[0.2em] mt-1">Omicron Tau | Rutgers University</span>
@@ -156,15 +159,15 @@
     <div class="bg-white border-b border-gray-100 py-10 overflow-hidden">
         <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">Omicron Tau Alumni Lead At</p>
         <div class="relative flex overflow-x-hidden group">
+        
             <div class="ticker-container ticker-wrapper">
-                <div class="ticker-item-group opacity-70 hover:opacity-100 transition-opacity duration-300">
+                
+                <div class="flex space-x-16 whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity duration-300 flex-shrink-0 w-1/2">
                     <span class="text-2xl font-bold font-serif text-gray-400">J&J</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">BLACKROCK</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">CITIBANK</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">UBS</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">TD BANK</span>
-                    <span class="text-2xl font-bold font-serif text-gray-400">STATE STREET</span>
-                    <span class="text-2xl font-bold font-serif text-gray-400">WELLS FARGO</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">SCOTIABANK</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">PRUDENTIAL</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">MERRILL LYNCH</span>
@@ -188,14 +191,13 @@
                     <span class="text-2xl font-bold font-serif text-gray-400">OCEAN POWER TECHNOLOGIES</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">ZENSAR TECHNOLOGIES</span>
                 </div>
-                <div class="ticker-item-group opacity-70 hover:opacity-100 transition-opacity duration-300">
+                
+                <div class="flex space-x-16 whitespace-nowrap opacity-70 hover:opacity-100 transition-opacity duration-300 flex-shrink-0 w-1/2">
                     <span class="text-2xl font-bold font-serif text-gray-400">J&J</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">BLACKROCK</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">CITIBANK</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">UBS</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">TD BANK</span>
-                    <span class="text-2xl font-bold font-serif text-gray-400">STATE STREET</span>
-                    <span class="text-2xl font-bold font-serif text-gray-400">WELLS FARGO</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">SCOTIABANK</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">PRUDENTIAL</span>
                     <span class="text-2xl font-bold font-serif text-gray-400">MERRILL LYNCH</span>
