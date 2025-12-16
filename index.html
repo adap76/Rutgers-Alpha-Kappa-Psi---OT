@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutgers Alpha Kappa Psi | Omicron Tau Chapter</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Brand Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -36,11 +32,11 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     animation: {
-                        'scroll': 'scroll 40s linear infinite',
+                        'scroll-ticker': 'scroll-ticker 40s linear infinite',
                         'fade-in': 'fadeIn 1s ease-out forwards',
                     },
                     keyframes: {
-                        scroll: {
+                        'scroll-ticker': {
                             '0%': { transform: 'translateX(0)' },
                             '100%': { transform: 'translateX(-100%)' },
                         },
@@ -60,23 +56,45 @@
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Ensure the ticker content duplicates for infinite loop illusion */
+        .ticker-container {
+            display: flex;
+            width: fit-content;
+        }
+        .ticker-item-group {
+            display: flex;
+            align-items: center;
+            gap: 4rem; /* Equivalent to space-x-16 */
+            padding-right: 4rem; /* Padding at the end of the group */
+        }
+        .ticker-item-group > span {
+            flex-shrink: 0;
+        }
+
+        /* The custom animation for the infinite scroll */
+        .ticker-wrapper {
+            animation: scroll-ticker 40s linear infinite;
+        }
     </style>
 </head>
 <body class="font-sans text-slate-800 antialiased bg-white">
 
-    <!-- TOP NAVIGATION -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <a href="#hero" class="flex flex-col">
-                        <span class="font-serif text-2xl font-bold text-akpsi-navy tracking-tight leading-none">ALPHA KAPPA PSI</span>
-                        <span class="text-[10px] font-bold text-akpsi-gold uppercase tracking-[0.2em] mt-1">Omicron Tau | Rutgers University</span>
+                    <a href="#hero" class="flex items-center space-x-3">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.477 2 2 6.477 2 12C2 17.523 6.477 22 12 22C17.523 22 22 17.523 22 12C22 6.477 17.523 2 12 2ZM13.88 16H10.12V8H13.88C15.82 8 17.16 9.24 17.16 12C17.16 14.76 15.82 16 13.88 16ZM14.96 10H13.12V14H14.96C15.4 14 15.8 13.56 15.8 12C15.8 10.44 15.4 10 14.96 10Z" fill="#cc0033"/>
+                        </svg>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-2xl font-bold text-akpsi-navy tracking-tight leading-none">ALPHA KAPPA PSI</span>
+                            <span class="text-[10px] font-bold text-akpsi-gold uppercase tracking-[0.2em] mt-1">Omicron Tau | Rutgers University</span>
+                        </div>
                     </a>
                 </div>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#about" class="text-sm font-medium text-gray-600 hover:text-akpsi-navy transition duration-300">About</a>
                     <a href="#impact" class="text-sm font-medium text-gray-600 hover:text-akpsi-navy transition duration-300">Impact</a>
@@ -87,7 +105,6 @@
                     </a>
                 </div>
 
-                <!-- Mobile Menu Icon -->
                 <div class="md:hidden">
                     <button class="text-gray-600 hover:text-rutgers-red">
                         <i data-lucide="menu" class="w-6 h-6"></i>
@@ -97,7 +114,6 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
     <header id="hero" class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0">
             <img src="https://www.rutgers.edu/sites/default/files/lg_RBS-100rock-business-school-aerial.jpg" 
@@ -137,57 +153,138 @@
         </div>
     </header>
 
-    <!-- CORPORATE PARTNERS TICKER -->
     <div class="bg-white border-b border-gray-100 py-10 overflow-hidden">
         <p class="text-center text-xs font-bold text-gray-400 uppercase tracking-widest mb-8">Omicron Tau Alumni Lead At</p>
         <div class="relative flex overflow-x-hidden group">
-            <div class="animate-scroll flex space-x-16 whitespace-nowrap opacity-60 hover:opacity-100 transition-opacity duration-300">
-                <span class="text-2xl font-bold font-serif text-gray-400">GOLDMAN SACHS</span>
-                <span class="text-2xl font-bold font-serif text-gray-400">DELOITTE</span>
-                <span class="text-2xl font-bold font-serif text-gray-400">J.P. MORGAN</span>
-                <span class="text-2xl font-bold font-serif text-gray-400">GOOGLE</span>
-                <span class="text-2xl font-bold font-serif text-gray-400">AMAZON</span>
-                <span class="text-2xl font-bold font-serif text-gray-400">MCKINSEY & CO</span>
-                <span class="text-2xl font-bold font-serif text-gray-400">JOHNSON & JOHNSON</span>
-                <span class="text-2xl font-bold font-serif text-gray-400">PWC</span>
-                <span class="text-2xl font-bold font-serif text-gray-400">CITI</span>
+            <div class="ticker-container ticker-wrapper">
+                <div class="ticker-item-group opacity-70 hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-2xl font-bold font-serif text-gray-400">J&J</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BLACKROCK</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">CITIBANK</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">UBS</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">TD BANK</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">STATE STREET</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">WELLS FARGO</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">SCOTIABANK</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">PRUDENTIAL</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">MERRILL LYNCH</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">MASTERCARD</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">KENVUE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">MIZUHO</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">CAPITAL ONE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BASF</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">PWC</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BRYSTOL MYERS SQUIBB</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BERKSHIRE HATHAWAY</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">CENCORA</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">SANOFI</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">COLGATE-PALMOLIVE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">ACCENTURE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">SAGESURE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">DTCC</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">METLIFE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">KIRKLAND & ELLIS</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BMO CAPITAL MARKETS</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">OCEAN POWER TECHNOLOGIES</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">ZENSAR TECHNOLOGIES</span>
+                </div>
+                <div class="ticker-item-group opacity-70 hover:opacity-100 transition-opacity duration-300">
+                    <span class="text-2xl font-bold font-serif text-gray-400">J&J</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BLACKROCK</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">CITIBANK</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">UBS</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">TD BANK</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">STATE STREET</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">WELLS FARGO</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">SCOTIABANK</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">PRUDENTIAL</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">MERRILL LYNCH</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">MASTERCARD</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">KENVUE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">MIZUHO</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">CAPITAL ONE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BASF</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">PWC</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BRYSTOL MYERS SQUIBB</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BERKSHIRE HATHAWAY</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">CENCORA</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">SANOFI</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">COLGATE-PALMOLIVE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">ACCENTURE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">SAGESURE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">DTCC</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">METLIFE</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">KIRKLAND & ELLIS</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">BMO CAPITAL MARKETS</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">OCEAN POWER TECHNOLOGIES</span>
+                    <span class="text-2xl font-bold font-serif text-gray-400">ZENSAR TECHNOLOGIES</span>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" class="py-24 bg-akpsi-light">
+    
+    <section id="president-letter" class="py-24 bg-akpsi-navy text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-akpsi-gold font-bold tracking-widest uppercase text-sm mb-2">About Omicron Tau</h2>
-                    <h3 class="text-4xl font-serif font-bold text-akpsi-navy mb-6">Our History & Legacy</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Founded at Rutgers University, Omicron Tau Chapter has built a legacy of leadership, professional development, and community service. We currently have 40+ active brothers and over 100 alumni who continue to excel in business and beyond.
-                    </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-rutgers-red mt-1 mr-3"></i>
-                            <span class="text-gray-700">- Mentorship programs connecting brothers with alumni.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-rutgers-red mt-1 mr-3"></i>
-                            <span class="text-gray-700">- Professional workshops and career preparation.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-rutgers-red mt-1 mr-3"></i>
-                            <span class="text-gray-700">- Lifelong brotherhood and networking opportunities.</span>
-                        </li>
-                    </ul>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                <div class="lg:col-span-1 border-r border-akpsi-gold/20 pr-6">
+                    <h2 class="text-akpsi-gold font-bold tracking-widest uppercase text-sm mb-4">A Message From Leadership</h2>
+                    <h3 class="text-4xl font-serif font-bold mb-6 leading-tight">Letter from the President</h3>
+                    <div class="text-gray-300">
+                        <p class="font-bold text-lg">Olivia Occhipinti</p>
+                        <p class="text-sm font-light">Omicron Tau Chapter President</p>
+                        <p class="text-sm text-akpsi-gold mt-1">Alpha Founding Class</p>
+                    </div>
                 </div>
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="rounded-sm shadow-xl" alt="Meeting">
+                
+                <div class="lg:col-span-2 text-lg leading-relaxed text-gray-300">
+                    <p class="mb-6 italic">
+                        [Placeholder: The actual letter from the President, Olivia Occhipinti, will go here soon.]
+                    </p>
+                    <p class="mb-6">
+                        Dear Prospective Brother,
+                    </p>
+                    <p class="mb-6">
+                        We are thrilled you are considering joining the Omicron Tau Chapter of Alpha Kappa Psi. Our brotherhood is founded on the principles of **leadership, education, and mutual service**, and we are dedicated to developing highly-competent and ethically-minded business professionals. We look forward to seeing your application and welcoming the next generation of leaders.
+                    </p>
+                    <p class="mt-8 font-serif font-semibold text-akpsi-gold">
+                        &mdash; Olivia Occhipinti
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- IMPACT SECTION -->
+    <section id="about" class="py-24 bg-akpsi-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-akpsi-gold font-bold tracking-widest uppercase text-sm mb-2">About Omicron Tau</h2>
+                    <h3 class="text-4xl font-serif font-bold text-akpsi-navy mb-6">Our History & Legacy: Beyond the Classroom</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Founded at Rutgers University, the Omicron Tau Chapter has built a powerful legacy as the premier business fraternity, dedicated to leadership and excellence. Our current chapter of **40+ active brothers** and **100+ distinguished alumni** forms a lifelong network of support and professional opportunity, extending far beyond the New Brunswick campus and into every major industry.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i data-lucide="network" class="w-5 h-5 text-rutgers-red mt-1 mr-3"></i>
+                            <span class="text-gray-700">**Lifelong Brotherhood and Networking:** Cultivate deep, professional relationships that translate into a robust, global alumni network, providing continuous career guidance and opportunity.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="briefcase" class="w-5 h-5 text-rutgers-red mt-1 mr-3"></i>
+                            <span class="text-gray-700">**Mentorship & Career Acceleration:** Structured mentorship programs connecting brothers with alumni in top-tier firms (J.P. Morgan, Deloitte, Goldman Sachs, etc.), coupled with professional workshops focused on corporate skills, interview readiness, and advanced technical knowledge.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="users" class="w-5 h-5 text-rutgers-red mt-1 mr-3"></i>
+                            <span class="text-gray-700">**Community Service & Ethical Leadership:** Commit to mutual service through impactful community initiatives like the Rutgers Dance Marathon, fostering ethical decision-making and a dedication to societal betterment.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="rounded-sm shadow-xl" alt="Brothers in a professional meeting setting.">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="impact" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -197,7 +294,7 @@
                         <h3 class="text-2xl font-serif font-bold text-akpsi-navy">Diversity & Inclusion</h3>
                     </div>
                     <p class="text-gray-600 mb-6">
-                        We are committed to fostering an inclusive environment where brothers of all backgrounds, majors, and perspectives drive innovation.
+                        We are committed to fostering an inclusive environment where brothers of all backgrounds, majors, and perspectives drive innovation. Our strength lies in the diversity of our members.
                     </p>
                     <a href="#" class="text-rutgers-red font-bold text-sm uppercase tracking-wider hover:text-akpsi-navy transition">Our Initiatives &rarr;</a>
                 </div>
@@ -208,7 +305,7 @@
                         <h3 class="text-2xl font-serif font-bold text-akpsi-navy">Rutgers Dance Marathon</h3>
                     </div>
                     <p class="text-gray-600 mb-6">
-                        We channel our organizational skills to support the Embrace Kids Foundation through RUDM fundraising events.
+                        We channel our organizational skills to support the Embrace Kids Foundation through RUDM fundraising events, championing service as a core pillar of our brotherhood.
                     </p>
                     <a href="https://secure.qgiv.com/event/rudm2026/team/1012229" target="_blank" class="text-rutgers-red font-bold text-sm uppercase tracking-wider hover:text-akpsi-navy transition">Support Our Team &rarr;</a>
                 </div>
@@ -216,7 +313,6 @@
         </div>
     </section>
 
-    <!-- BROTHERS SECTION -->
     <section id="brothers" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -226,17 +322,119 @@
                 <p class="mt-4 text-gray-500">Omicron Tau</p>
             </div>
 
-            <!-- Fall 2025 Beta Founding Class -->
             <div class="mb-16">
                 <h3 class="text-2xl font-serif font-bold text-akpsi-navy border-b border-gray-200 pb-2 mb-8">
                     Fall 2025 <span class="text-base font-sans font-normal text-gray-500 ml-2">(Beta Founding Class)</span>
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                    <!-- Placeholder for 16 brothers -->
-                    <!-- Example Card -->
                     <div class="group text-center">
                         <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
-                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
                         </div>
                         <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
                         <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
@@ -244,16 +442,175 @@
                 </div>
             </div>
 
-            <!-- Fall 2024 Alpha Founding Class -->
             <div class="mb-16">
                 <h3 class="text-2xl font-serif font-bold text-akpsi-navy border-b border-gray-200 pb-2 mb-8">
                     Fall 2024 <span class="text-base font-sans font-normal text-gray-500 ml-2">(Alpha Founding Class)</span>
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                    <!-- Placeholder for 24 brothers -->
                     <div class="group text-center">
                         <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
-                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother Profile Picture">
                         </div>
                         <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
                         <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
@@ -263,7 +620,6 @@
         </div>
     </section>
 
-    <!-- RECRUITMENT SECTION -->
     <section id="recruitment" class="py-24 bg-akpsi-navy text-white relative overflow-hidden">
         <div class="absolute top-0 right-0 w-96 h-96 bg-rutgers-red opacity-10 rounded-full filter blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -303,7 +659,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="bg-akpsi-dark text-white pt-16 pb-8 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -312,7 +667,7 @@
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Omicron Tau Chapter<br>
                         Rutgers University<br>
-                        Piscataway, NJ 08854
+                        New Brunswick, NJ 
                     </p>
                 </div>
                 
@@ -328,11 +683,10 @@
                 <div>
                     <h5 class="text-akpsi-gold font-bold text-xs uppercase tracking-widest mb-4">Connect</h5>
                     <div class="flex space-x-4 mb-6">
-                        <!-- EDIT SOCIAL LINKS HERE -->
                         <a href="https://instagram.com/rutgers_akpsi" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-rutgers-red transition">
                             <i data-lucide="instagram" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-rutgers-red transition">
+                        <a href="https://www.linkedin.com/company/rutgers-alphakappapsi" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-rutgers-red transition">
                             <i data-lucide="linkedin" class="w-5 h-5"></i>
                         </a>
                     </div>
@@ -351,7 +705,6 @@
         </div>
     </footer>
 
-    <!-- Initialize Icons -->
     <script>
         lucide.createIcons();
     </script>
