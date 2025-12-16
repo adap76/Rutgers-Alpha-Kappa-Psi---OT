@@ -52,28 +52,22 @@
     </script>
     
     <style>
+            /* Inside the <style> block, paste this corrected code block */
         .hero-overlay {
             background: linear-gradient(135deg, rgba(0, 48, 87, 0.95) 0%, rgba(0, 26, 48, 0.85) 100%);
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* Ensure the ticker content duplicates for infinite loop illusion */
+    
+        /* Key Fix: Ensures the container holds the duplicated content and applies performance optimization */
         .ticker-container {
             display: flex;
-            width: fit-content;
-        }
-        .ticker-item-group {
-            display: flex;
-            align-items: center;
-            gap: 4rem; /* Equivalent to space-x-16 */
-            padding-right: 4rem; /* Padding at the end of the group */
-        }
-        .ticker-item-group > span {
+            width: 200%; /* REQUIRED for animation keyframes to work */
             flex-shrink: 0;
+            will-change: transform; /* Performance optimization for smooth scrolling */
         }
-
-        /* The custom animation for the infinite scroll */
+    
+        /* Applying the animation defined in tailwind.config */
         .ticker-wrapper {
             animation: scroll-ticker 40s linear infinite;
         }
@@ -86,11 +80,11 @@
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
                     <a href="#hero" class="flex items-center space-x-3">
-                        <img 
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Rutgers_Scarlet_Knights_logo.svg/248px-Rutgers_Scarlet_Knights_logo.svg.png" 
-                            alt="Rutgers Block R Logo" 
-                            class="w-8 h-8 object-contain"
-                        >
+                            <img 
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Rutgers_logo.svg/800px-Rutgers_logo.svg.png" 
+                                alt="Rutgers Block R Logo" 
+                                class="w-8 h-8 object-contain"
+                            >
                         <div class="flex flex-col">
                             <span class="font-serif text-2xl font-bold text-akpsi-navy tracking-tight leading-none">ALPHA KAPPA PSI</span>
                             <span class="text-[10px] font-bold text-akpsi-gold uppercase tracking-[0.2em] mt-1">Omicron Tau | Rutgers University</span>
