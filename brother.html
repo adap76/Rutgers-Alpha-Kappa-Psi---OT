@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brothers | AKPsi Omicron Tau</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'akpsi-navy': '#003057',
+                        'akpsi-gold': '#FFD700',
+                        'rutgers-red': '#CC0033',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+
+    <nav class="fixed w-full z-50 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="images/rutgers_block_r.png" alt="Logo" class="w-8 h-8">
+                <span class="font-serif font-bold text-xl text-akpsi-navy uppercase">Alpha Kappa Psi</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="index.html" class="text-gray-600 hover:text-rutgers-red transition">Home</a>
+                <a href="brothers.html" class="text-rutgers-red border-b-2 border-rutgers-red">Brothers</a>
+                <a href="alumni.html" class="text-gray-600 hover:text-rutgers-red transition">Alumni</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="h-20"></div>
+
+    <section id="brothers" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-rutgers-red font-bold tracking-widest uppercase text-sm">Alpha Kappa Psi</span>
+                <h2 class="text-4xl font-serif font-bold text-akpsi-navy mt-2">Current Brothers</h2>
+                <div class="w-16 h-1 bg-akpsi-gold mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-gray-500">Omicron Tau Chapter</p>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-serif font-bold text-akpsi-navy border-b border-gray-200 pb-2 mb-8">
+                    Fall 2025 <span class="text-base font-sans font-normal text-gray-500 ml-2">(Beta Founding Class)</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden border-2 border-transparent group-hover:border-akpsi-gold transition-all">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                    </div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-serif font-bold text-akpsi-navy border-b border-gray-200 pb-2 mb-8">
+                    Fall 2024 <span class="text-base font-sans font-normal text-gray-500 ml-2">(Alpha Founding Class)</span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    <div class="group text-center">
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gray-200 mb-3 overflow-hidden border-2 border-transparent group-hover:border-akpsi-gold transition-all">
+                            <img src="https://via.placeholder.com/150" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition" alt="Brother">
+                        </div>
+                        <h4 class="font-bold text-gray-900 text-sm">Brother Name</h4>
+                        <p class="text-xs text-rutgers-red uppercase tracking-wider">Major</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-100 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm">© 2025 Alpha Kappa Psi - Omicron Tau Chapter. Rutgers University.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
